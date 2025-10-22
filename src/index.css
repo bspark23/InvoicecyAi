@@ -1,0 +1,361 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 213 31% 91%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 216 34% 17%;
+    
+    --sidebar-background: 224 71% 4%;
+    --sidebar-foreground: 213 31% 91%;
+    --sidebar-primary: 210 40% 98%;
+    --sidebar-primary-foreground: 222.2 47.4% 11.2%;
+    --sidebar-accent: 215 27.9% 16.9%;
+    --sidebar-accent-foreground: 213 31% 91%;
+    --sidebar-border: 215 27.9% 16.9%;
+    --sidebar-ring: 216 34% 17%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Professional dark mode adjustments */
+  .dark {
+    color-scheme: dark;
+  }
+
+  /* Responsive typography */
+  h1 {
+    @apply text-xl sm:text-2xl lg:text-3xl xl:text-4xl;
+  }
+
+  h2 {
+    @apply text-lg sm:text-xl lg:text-2xl xl:text-3xl;
+  }
+
+  h3 {
+    @apply text-base sm:text-lg lg:text-xl xl:text-2xl;
+  }
+
+  /* Ensure containers are responsive */
+  .container {
+    @apply w-full max-w-full px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* Dark mode color overrides for professional styling */
+.dark .bg-gray-50 {
+  background-color: rgb(17 24 39);
+}
+
+.dark .bg-white {
+  background-color: rgb(31 41 55);
+}
+
+.dark .text-gray-900 {
+  color: rgb(243 244 246);
+}
+
+.dark .text-gray-800 {
+  color: rgb(229 231 235);
+}
+
+.dark .text-gray-700 {
+  color: rgb(209 213 219);
+}
+
+.dark .text-gray-600 {
+  color: rgb(156 163 175);
+}
+
+.dark .border-gray-200 {
+  border-color: rgb(75 85 99);
+}
+
+.dark .border-gray-300 {
+  border-color: rgb(107 114 128);
+}
+
+.dark .hover\:bg-gray-50:hover {
+  background-color: rgb(55 65 81);
+}
+
+.dark .hover\:bg-gray-100:hover {
+  background-color: rgb(55 65 81);
+}
+
+/* Professional status colors in dark mode */
+.dark .bg-green-50 {
+  background-color: rgb(5 46 22 / 0.3);
+}
+
+.dark .bg-red-50 {
+  background-color: rgb(69 10 10 / 0.3);
+}
+
+.dark .bg-orange-50 {
+  background-color: rgb(67 20 7 / 0.3);
+}
+
+.dark .border-green-200 {
+  border-color: rgb(34 197 94 / 0.4);
+}
+
+.dark .border-red-200 {
+  border-color: rgb(239 68 68 / 0.4);
+}
+
+.dark .border-orange-200 {
+  border-color: rgb(251 146 60 / 0.4);
+}
+
+.dark .text-green-800 {
+  color: rgb(134 239 172);
+}
+
+.dark .text-green-600 {
+  color: rgb(74 222 128);
+}
+
+.dark .text-red-800 {
+  color: rgb(252 165 165);
+}
+
+.dark .text-red-600 {
+  color: rgb(248 113 113);
+}
+
+.dark .text-orange-800 {
+  color: rgb(253 186 116);
+}
+
+.dark .text-orange-600 {
+  color: rgb(251 146 60);
+}
+
+/* Responsive utilities */
+@layer utilities {
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Responsive grid utilities */
+  .grid-responsive {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6;
+  }
+
+  .grid-responsive-2 {
+    @apply grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6;
+  }
+
+  /* Responsive spacing */
+  .spacing-responsive {
+    @apply p-4 sm:p-6 lg:p-8;
+  }
+
+  .margin-responsive {
+    @apply m-4 sm:m-6 lg:m-8;
+  }
+
+  /* Mobile-first responsive flex */
+  .flex-responsive {
+    @apply flex flex-col sm:flex-row items-start sm:items-center gap-4;
+  }
+
+  /* Responsive text sizes */
+  .text-responsive {
+    @apply text-sm sm:text-base lg:text-lg;
+  }
+
+  .text-responsive-small {
+    @apply text-xs sm:text-sm lg:text-base;
+  }
+
+  /* Professional dark mode shadows */
+  .dark .shadow-sm {
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  }
+
+  .dark .shadow {
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.4), 0 1px 2px -1px rgb(0 0 0 / 0.4);
+  }
+
+  .dark .shadow-lg {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.4);
+  }
+}
+
+/* Print styles for invoice preview */
+@media print {
+  .print\:hidden {
+    display: none !important;
+  }
+  
+  .print\:block {
+    display: block !important;
+  }
+  
+  .print\:p-0 {
+    padding: 0 !important;
+  }
+  
+  .print\:border-0 {
+    border: 0 !important;
+  }
+  
+  .print\:shadow-none {
+    box-shadow: none !important;
+  }
+  
+  .print\:bg-white {
+    background-color: white !important;
+  }
+  
+  body {
+    background-color: white !important;
+  }
+}
+
+/* Desktop specific styles */
+@media (min-width: 1024px) {
+  .desktop\:min-h-screen {
+    min-height: 100vh;
+  }
+  
+  .desktop\:max-w-none {
+    max-width: none;
+  }
+  
+  .desktop\:w-full {
+    width: 100%;
+  }
+}
+
+/* Ensure sidebar responsiveness */
+@media (max-width: 768px) {
+  .sidebar-mobile {
+    @apply fixed inset-0 z-50 transform transition-transform duration-300 ease-in-out;
+  }
+}
+
+/* Professional focus states for dark mode */
+.dark input:focus,
+.dark textarea:focus,
+.dark select:focus {
+  @apply ring-2 ring-blue-500 ring-offset-2 ring-offset-gray-800;
+}
+
+/* Professional scrollbar styling */
+.dark ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: rgb(31 41 55);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgb(75 85 99);
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgb(107 114 128);
+}
